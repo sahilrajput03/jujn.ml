@@ -1,0 +1,12 @@
+<h1 style="text-align: center; margin: 200px;">
+	(stopped) Redirecting to ***** site
+</h1>
+<script>
+	log = console.log;
+	//	setTimeout(		() => (window.location.href = "http://www.w3schools.com"),2_000	);
+	async function main() {
+		const message = (await (await fetch("https://api.kanye.rest")).json()).quote;
+		log(message);
+	}
+	main();
+</script>
