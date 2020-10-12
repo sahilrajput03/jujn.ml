@@ -1,12 +1,25 @@
-<h1 style="text-align: center; margin: 200px;">
-	(stopped) Redirecting to ***** site
+<h1 style="text-align: center; color: lightpink; margin: 100px;">
+	Redirecting to JaaduJinn.ml
 </h1>
+ <h1 id="thought" style="text-align: center; color: pink;"></h1>
 <script>
 	log = console.log;
-	//	setTimeout(		() => (window.location.href = "http://www.w3schools.com"),2_000	);
 	async function main() {
-		const message = (await (await fetch("https://api.kanye.rest")).json()).quote;
-		log(message);
+		const fetchedMessage = (
+			await (await fetch("https://api.kanye.rest")).json()
+		).quote;
+		log(fetchedMessage);
+		let thought = document.createTextNode(fetchedMessage);
+		document.getElementById("thought").appendChild(thought);
+
+		// let have10words = fetchedMessage.split(" ").length > 10
+		// log(have10words)
+		// let seconds = 
+		setTimeout(		() => {
+			window.location.href = "https://jaadujinn.ml"
+			console.warn("timeouted")}, 2_000);
+
+
 	}
 	main();
 </script>
